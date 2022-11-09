@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Register - Metro Rail Monitoring Tool</title>
+
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/7caed840db.js" crossorigin="anonymous"></script>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+  <!-- Fevicon.ico and custom css-->
+  <link rel="icon" href="./icons/favicon.ico">
+  <link rel="stylesheet" href="./styles/header.css">
+  <link rel="stylesheet" href="./styles/form.css">
+  <link rel="stylesheet" href="./styles/register.css">
+  <link rel="stylesheet" href="./styles/footer.css">
+</head>
+
+<body oncontextmenu="return false;">
+  <!-- Header -->
+  <div class="container-fluid p-0">
+    <div class="header row">
+      <div class="col-sm-2 pr-0 text-center">
+        <img src="./images/logo.jpeg" class="img-fluid img-logo" alt="MRMT Logo">
+      </div>
+      <div class="col-sm-10 p-0">
+        <h2 class="page-heading text-center">Metro Rail Monitoring Tool</h2>
+      </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <a class="nav-item link" href="./">Back</a>
+    </nav>
+  </div>
+
+  <!-- Register form-->
+  <div class="container-fluid row p-0 m-0 mt-3">
+    <div class="col-sm-12 p-0">
+      <form class="register-form" method="POST">
+        <h2 class="form-heading">User Registration</h2>
+
+        <div class="options row">
+          <legend>Choose User Type</legend>
+          <div class="col-sm-6 p-0">
+            <input type="radio" name="option" id="customer" checked>
+            <label for="customer">Customer</label>
+          </div>
+          <div class="col-sm-6 p-0">
+            <input type="radio" name="option" id="admin">
+            <label for="admin">Administrator</label>
+          </div>
+        </div>
+
+        <div class="col-sm-12 p-0 hide-input">
+          <legend>Enter Employee Id</legend>
+          <input type="text" name="employeeId" placeholder="Enter Employee Id" onfocus="this.placeholder=''"
+            onblur="this.placeholder='Enter Employee Id'" id="employeeId">
+          <i class="fas fa-check-circle"></i>
+          <i class="fas fa-exclamation-circle"></i>
+          <p class="message">Error Message</p>
+        </div>
+
+        <div class="col-sm-12 p-0">
+          <legend>Enter Full Name</legend>
+          <input type="text" name="name" placeholder="Enter Full Name" onfocus="this.placeholder=''"
+            onblur="this.placeholder='Enter Full Name'" id="username">
+          <i class="fas fa-check-circle"></i>
+          <i class="fas fa-exclamation-circle"></i>
+          <p class="message">Error Message</p>
+        </div>
+
+        <div class="col-sm-12 p-0">
+          <legend>Enter Email Address</legend>
+          <input type="email" name="email" placeholder="Enter Email" onfocus="this.placeholder=''"
+            onblur="this.placeholder='Enter Email'" id="email">
+          <i class="fas fa-check-circle"></i>
+          <i class="fas fa-exclamation-circle"></i>
+          <p class="message">Error Message</p>
+        </div>
+
+        <div class="col-sm-12 p-0">
+          <legend>Enter Password</legend>
+          <input type="password" name="password" placeholder="Enter Password" onfocus="this.placeholder=''"
+            onblur="this.placeholder='Enter Password'" id="password">
+          <i class="fa fa-check-circle"></i>
+          <i class="fa fa-exclamation-circle"></i>
+          <p class="message">Error Message</p>
+        </div>
+
+        <div class="col-sm-12 p-0">
+          <legend>Confirm Password</legend>
+          <input type="password" name="password2" placeholder="Confirm Password" onfocus="this.placeholder=''"
+            onblur="this.placeholder='Confirm Password'" id="password2">
+          <i class="fa fa-check-circle"></i>
+          <i class="fa fa-exclamation-circle"></i>
+          <p class="message">Error Message</p>
+        </div>
+
+        <div class="col-sm-12 p-0">
+          <legend>Enter Phone Number</legend>
+          <input type="text" name="phone" placeholder="Enter Phone Number" onfocus="this.placeholder=''"
+            onblur="this.placeholder='Enter Phone Number'" id="phone">
+          <i class="fa fa-check-circle"></i>
+          <i class="fa fa-exclamation-circle"></i>
+          <p class="message">Error Message</p>
+        </div>
+
+        <div class="col-sm-12 p-0 hide-input">
+          <legend class="dob">Enter Date of Birth</legend>
+          <input type="date" name="dob" min="1970-01-01" max="2003-12-31" id="dob">
+          <i class="fa fa-check-circle dob"></i>
+          <i class="fa fa-exclamation-circle dob"></i>
+          <p class="message">Error Message</p>
+        </div>
+
+        <div class="col-sm-12 p-0 hide-input">
+          <legend>Enter Address</legend>
+          <textarea rows="3" cols="40" name="address" placeholder="Enter Address" onfocus="this.placeholder=''"
+            onblur="this.placeholder='Enter Address'" id="address"></textarea>
+          <i class="fa fa-check-circle"></i>
+          <i class="fa fa-exclamation-circle"></i>
+          <p class="message">Error Message</p>
+        </div>
+
+        <div class="col-sm-12 p-0">
+          <button class="submit" id="register">Register</button>
+        </div>
+
+        <div class="col-sm-12 p-0 spinner">
+          <i class="fas fa-spinner fa-spin"></i>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Display Message Box-->
+  <div class="modal fade" id="alertModal" tabindex="-1" role="dialog" aria-labelledby="alertModal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header" id="alertModalHeader">
+          <h4 class="modal-title" id="alertModalTitle"></h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="closeModal">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p id="alertModalBodyText"></p>
+        </div>
+        <div class="modal-footer">
+          <p id="alertModalFooterText"></p>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="container-fluid p-0 m-0">
+    <footer class="footer">
+      <p class="m-0">© 2021 Copyright: siddhi-developers.com</p>
+    </footer>
+  </div>
+
+  <!-- jquery -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script>
+
+  <!-- Bootstrap JavaScript -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
+
+  <!-- EmailJS JavaScript -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+  <!-- Custom JavaScript -->
+  <script type="module" src="./scripts/register.js"></script>
+</body>
+
+</html>

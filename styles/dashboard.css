@@ -1,0 +1,67 @@
+.dropdown-menu {
+  width: 20%;
+  margin-top: 10px;
+}
+
+.dropdown-item:hover {
+  color: #3b007e;
+  background-color: #eddffd;
+}
+
+.text p {
+  color: #3b007e;
+}
+
+.form-inline {
+  background: none;
+}
+
+.carousel-indicators li {
+  background-color: #5d0088;
+  height: 5px;
+}
+
+.img-carousel {
+  border: 2px solid grey;
+  border-radius: 10px;
+  height: 550px;
+}
+
+.fa-angle-left,
+.fa-angle-right {
+  font-size: 35px;
+  color: #5d0088;
+}
+
+.container-content {
+  border: 2px solid grey;
+  border-radius: 10px;
+  width: 50%;
+  height: fit-content;
+  margin: 0 25%;
+}
+
+.hide-input {
+  display: none;
+}
+
+.profile-form {
+  padding: 0 20px 25px 20px;
+  border-radius: 10px;
+  height: 100%;
+}
+
+label {
+  width: 100%;
+  padding: 10px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #742fc2;
+}
+
+input,
+textarea {
+  border: none;
+  outline: none;
+  box-shadow: 0 0 0 2px #742fc2;
+}

@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Metro Rail Monitoring Tool</title>
+
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/7caed840db.js" crossorigin="anonymous"></script>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+  <!-- Fevicon.ico and custom css-->
+  <link rel="icon" href="icons/favicon.ico">
+  <link rel="stylesheet" href="./styles/header.css">
+  <link rel="stylesheet" href="./styles/form.css">
+  <link rel="stylesheet" href="./styles/index.css">
+  <link rel="stylesheet" href="./styles/footer.css">
+
+  <!-- Validating new session -->
+  <script>
+    if (sessionStorage.getItem("session")) {
+      window.location.assign("./src/dashboard.html");
+    }
+  </script>
+</head>
+
+<body oncontextmenu="return false;">
+  <!-- Header -->
+  <div class=" container-fluid p-0">
+    <div class="header row">
+      <div class="col-sm-2 pr-0 text-center">
+        <img src="./images/logo.jpeg" class="img-fluid img-logo" alt="MRMT Logo">
+      </div>
+      <div class="col-sm-10 p-0">
+        <h2 class="page-heading text-center">Metro Rail Monitoring Tool</h2>
+      </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <a class="nav-item link" href="./">Home</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="link" href="#features">Features</a>
+          </li>
+          <li class="nav-item">
+            <a class="link" href="#about-us">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="link" href="#contact-us">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+  <!-- Home page and Login form -->
+  <div class="container-fluid p-0 m-0 mt-3">
+    <div class="container-fluid row p-0 m-0">
+      <div class="col-sm-7 p-0 m-0">
+        <img src="./images/content_img.jpeg" class="img-home" alt="content_image">
+      </div>
+
+      <div class="col-sm-5 p-0">
+        <form class="login-form" method="POST">
+          <h2 class="form-heading">User Login</h2>
+
+          <div class="options row">
+            <legend>Choose User Type</legend>
+            <div class="col-sm-6 p-0">
+              <input type="radio" name="option" id="customer" checked>
+              <label for="customer">Customer</label>
+            </div>
+            <div class="col-sm-6 p-0">
+              <input type="radio" name="option" id="admin">
+              <label for="admin">Administrator</label>
+            </div>
+          </div>
+
+          <div class="col-sm-12 p-0">
+            <legend>Enter Customer ID / Email</legend>
+            <input type="text" name="email" placeholder="Enter Customer ID / Email" onfocus="this.placeholder=''"
+              onblur="this.placeholder='Enter Customer ID / Email'" id="id">
+            <i class="fas fa-check-circle"></i>
+            <i class="fas fa-exclamation-circle"></i>
+            <p class="message">Error Message</p>
+          </div>
+
+          <div class="col-sm-12 p-0">
+            <legend>Enter Password</legend>
+            <input type="password" name="password" placeholder="Enter Password" onfocus="this.placeholder=''"
+              onblur="this.placeholder='Enter Password'" id="password">
+            <i class="fas fa-check-circle"></i>
+            <i class="fas fa-exclamation-circle"></i>
+            <p class="message">Error Message</p>
+          </div>
+
+          <div class="col-sm-12 p-0">
+            <button class="submit" id="login">Login</button>
+          </div>
+
+          <div class="col-sm-12 p-0 spinner" id="spinner">
+            <i class="fas fa-spinner fa-spin"></i>
+          </div>
+
+          <div class="links row">
+            <div class="col-sm-4 text-center">
+              <a href="./register.html">Sign up</a>
+            </div>
+            <div class="col-sm-8 text-center">
+              <a href="./reset-password.html">Forgot password?</a>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Features -->
+  <div id="features" class="container-fluid p-0 m-0 row">
+    <h2 class="col-sm-12 content-heading">Features</h2>
+    <div class="col-sm-4 pr-0">
+      <img src="./images/key-features.jpeg" class="img-features" alt="features-image">
+    </div>
+    <div class="col-sm-8 content mt-3">
+      <p>
+        1. Collection of users information around the state while they are registering. Record
+        the information for further communication for multiple purpose including survey.
+      </p>
+      <p>
+        2. Provide information regarding metro rail like tracking metros, viewing
+        routes and directions, recharging their metro cards, calculating fare, etc.
+      </p>
+      <p>
+        3. Provide information to admin of most recent technology can be used for monitoring/updating
+        data of customers. By doing this admin can get their work done in minutes or seconds rather
+        than manually doing it for hours.
+      </p>
+    </div>
+  </div>
+
+  <!-- About Us -->
+  <div id="about-us" class="container-fluid p-0 m-0 row">
+    <h2 class="col-sm-12 content-heading">About Us</h2>
+    <div class="col-sm-8 pr-0 content">
+      <h3 class="sub-heading">Providing the most actionable App</h3>
+      <p>
+        This project is focusing the preparation of a monitoring tool, which intends to provide information about
+        Metro Rail.
+      </p>
+      <p>
+        For unit-level information about metro rails, MRMT is a great, user friendly tool that's easy to configure
+        and
+        set up.
+      </p>
+    </div>
+
+    <div class="col-sm-4 pl-0 text-center">
+      <img src="./images/about-us1.jpeg" class="img-about-us" alt="about-us-image1">
+      <!--<span class="glyphicon glyphicon-signal logo"></span>-->
+    </div>
+
+    <div class="col-sm-4 pr-0 mt-1 text-center">
+      <img src="./images/about-us2.jpeg" class="img-about-us" alt="about-us-image2">
+    </div>
+
+    <div class="col-sm-8 pl-0 content">
+      <h3 class="sub-heading">Our Mission</h3>
+      <p>
+        The objective of this project is to provide facility of online information to user of Delhi metro who need
+        to
+        know about metro routes/gates, recharge process of their metro cards, metro rail timings etc.
+      </p>
+    </div>
+  </div>
+
+  <!-- Contact Us -->
+  <div id="contact-us" class="container-fluid p-0 m-0 mt-3">
+    <h2 class="content-heading">Contact Us</h2>
+
+    <div class="container-fluid p-0 m-0 row container-contact-us">
+      <div class="col-sm-6 p-0 text-center">
+        <img class="img-contact-us" src="./images/email-icon.jpeg">
+        <p class="text-contact-us">If you have questions or just want to get in touch, send us your query.
+          We will reach out to you soon.</p>
+      </div>
+
+      <div class="col-sm-6 p-0">
+        <form class="query-form" method="POST">
+          <div class="options row">
+            <legend class="contact-us-legend">Choose Contact Type</legend>
+            <div class="col-sm-6 p-0">
+              <input type="radio" name="option" id="emailOption" checked>
+              <label for="customer">Email</label>
+            </div>
+            <div class="col-sm-6 p-0">
+              <input type="radio" name="option" id="callOption">
+              <label for="admin">Phone Call</label>
+            </div>
+          </div>
+
+          <div class="col-sm-12 p-0">
+            <legend class="query-legend">Enter Name</legend>
+            <input type="text" name="queryName" placeholder="Enter Name" onfocus="this.placeholder=''"
+              onblur="this.placeholder='Enter Name'" id="queryName">
+            <i class="fas fa-check-circle"></i>
+            <i class="fas fa-exclamation-circle"></i>
+            <p class="message">Error Message</p>
+          </div>
+
+          <div class="col-sm-12 p-0">
+            <legend class="query-legend">Enter Email</legend>
+            <input type="text" name="queryEmail" placeholder="Enter Email" onfocus="this.placeholder=''"
+              onblur="this.placeholder='Email'" id="queryEmail">
+            <i class="fas fa-check-circle"></i>
+            <i class="fas fa-exclamation-circle"></i>
+            <p class="message">Error Message</p>
+          </div>
+
+          <div class="col-sm-12 p-0">
+            <legend class="query-legend">Enter Query Description</legend>
+            <textarea rows="3" cols="40" name="query" placeholder="Enter Query Description"
+              onfocus="this.placeholder=''" onblur="this.placeholder='Enter Query Description'" id="query"></textarea>
+            <i class="fas fa-check-circle"></i>
+            <i class="fas fa-exclamation-circle"></i>
+            <p class="message">Error Message</p>
+          </div>
+
+          <div class="col-sm-12 p-0">
+            <button class="submit" id="submit">Submit</button>
+          </div>
+
+          <div class="col-sm-12 p-0 spinner" id="querySpinner">
+            <i class="fas fa-spinner fa-spin"></i>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Display Message Box-->
+  <div class="modal fade" id="alertModal" tabindex="-1" role="dialog" aria-labelledby="alertModal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header" id="alertModalHeader">
+          <h4 class="modal-title" id="alertModalTitle"></h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="closeModal">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p id="alertModalBody"></p>
+        </div>
+        <div class="modal-footer">
+          <p id="alertModalFooterText"></p>
+          <button id="alertModalFooterBtn" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="container-fluid p-0 m-0">
+    <footer class="footer">
+      <p class="m-0">© 2021 Copyright: siddhi-developers.com</p>
+    </footer>
+  </div>
+
+  <!-- jquery -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+
+  <!-- Bootstrap JavaScript -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+
+  <!-- Custom JavaScript -->
+  <script type="module" src="./scripts/login.js"></script>
+  <script type="module" src="./scripts/query.js"></script>
+</body>
+
+</html>

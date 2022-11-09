@@ -1,0 +1,12 @@
+.footer {
+    text-align: center;
+    padding: 1%;
+    margin: 2% 0;
+    background-color: #f3e9ff;
+    border: 2px solid grey;
+    border-radius: 10px;
+}
+
+.footer a {
+    text-decoration: none;
+}

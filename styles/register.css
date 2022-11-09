@@ -1,0 +1,44 @@
+.register-form {
+  padding: 0 20px 25px 20px;
+  width: 50%;
+  margin: 0 25%;
+  border: 2px solid grey;
+  border-radius: 10px;
+}
+
+@media only screen and (min-width: 706px) {
+  .options legend {
+    margin: 0 25%;
+  }
+}
+
+@media only screen and (max-width: 706px) {
+  .register-form {
+    width: 100%;
+    margin: 0;
+  }
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  position: absolute;
+  left: -10px;
+  cursor: pointer;
+}
+
+input::-webkit-datetime-edit {
+  position: relative;
+  left: 15px;
+}
+
+input::-webkit-datetime-edit-fields-wrapper {
+  position: relative;
+  left: 15px;
+}
+
+legend.dob {
+  visibility: visible;
+}
+
+.hide-input {
+  display: none;
+}

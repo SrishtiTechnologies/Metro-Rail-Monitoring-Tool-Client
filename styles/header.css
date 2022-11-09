@@ -1,0 +1,46 @@
+html,
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #d6e9f8;
+  box-sizing: border-box;
+  font-size: 20px;
+}
+
+.header {
+  margin: 0;
+  padding: 1% 0;
+  background-color: #9bd2ff;
+}
+
+h2.page-heading {
+  margin: 4% 0;
+  font-size: 40px;
+  font-weight: 700;
+  color: #3b007e;
+}
+
+.img-logo {
+  border-radius: 50%;
+}
+
+.navbar {
+  border: 2px solid grey;
+  border-radius: 10px;
+  background-color: #eddffd;
+}
+
+.link {
+  color: #3b007e;
+}
+
+.link:hover {
+  text-decoration: none;
+  color: #3b007e;
+  cursor: pointer;
+}
+
+.nav-item {
+  padding: 0 15px;
+  font-size: 20px;
+  font-weight: 550;
+}
